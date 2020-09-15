@@ -18,7 +18,7 @@ public class DoublyLinkedList {
 	public String toString() {
 		String text = Integer.toString(value);
 		if (next != null) {
-			text = next.toString() + "," + text;
+			text += next.toString();
 		}
 		return text;
 	}

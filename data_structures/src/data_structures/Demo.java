@@ -2,12 +2,13 @@ package data_structures;
 
 public class Demo {
 	public static void main(String[] args) {
-		SinglyLinkedList list = null;
+		SinglyLinkedList head = new SinglyLinkedList(1);
+		SinglyLinkedList tail = head;
 		
-		list = new SinglyLinkedList(1, list);
-		list = new SinglyLinkedList(2, list);
-		list = new SinglyLinkedList(3, list);
+		tail = tail.insertAfter(2);
+		tail = tail.insertAfter(3);
+		tail = tail.insertAfter(4);
 		
-		System.out.println(list);
+		System.out.println(head);
 	}
 }
