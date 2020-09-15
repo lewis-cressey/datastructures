@@ -9,6 +9,11 @@ public class SinglyLinkedList {
 		this.next = next;
 	}
 	
+	void insertAfter(int value, SinglyLinkedList element) {
+		SinglyLinkedList newElement = new SinglyLinkedList(value, element.next);
+		element.next = newElement;
+	}
+	
 	public String toString() {
 		String text = Integer.toString(value);
 		if (next != null) {
