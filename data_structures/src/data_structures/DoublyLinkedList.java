@@ -5,14 +5,19 @@ public class DoublyLinkedList {
 	private DoublyLinkedList next;
 	private DoublyLinkedList prev;
 	
-	DoublyLinkedList(int value, DoublyLinkedList next, DoublyLinkedList prev) {
+	DoublyLinkedList(int value) {
 		this.value = value;
-		this.next = next;
-		this.prev = prev;
+		this.next = null;
+		this.prev = null;
 	}
 	
-	void insertAfter(DoublyLinkedList element) {
-		// todo
+	DoublyLinkedList insertAfter(DoublyLinkedList element) {
+		DoublyLinkedList newElement = new DoublyLinkedList(value);
+		newElement.next = element.next;
+		newElement.prev = element;
+		element.next = newElement;
+		newElement.next.prev = newElement;
+		return newElement;
 	}
 	
 	public String toString() {
