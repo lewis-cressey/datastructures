@@ -11,19 +11,19 @@ public class DoublyLinkedList {
 		this.prev = null;
 	}
 	
-	DoublyLinkedList insertAfter(DoublyLinkedList element) {
+	DoublyLinkedList insertAfter(int value) {
 		DoublyLinkedList newElement = new DoublyLinkedList(value);
-		newElement.next = element.next;
-		newElement.prev = element;
-		element.next = newElement;
-		newElement.next.prev = newElement;
+		newElement.next = this.next;
+		newElement.prev = this;
+		this.next = newElement;
+		if (newElement.next != null) newElement.next.prev = newElement;
 		return newElement;
 	}
 	
 	public String toString() {
 		String text = Integer.toString(value);
 		if (next != null) {
-			text += next.toString();
+			text += "," + next.toString();
 		}
 		return text;
 	}
