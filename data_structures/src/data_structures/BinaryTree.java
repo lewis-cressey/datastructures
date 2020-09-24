@@ -11,6 +11,10 @@ public class BinaryTree {
 		this.next = null;
 	}
 	
+	public BinaryTree add(String name) {
+		// you write this!
+	}
+	
 	public boolean contains(String name) {
 		/* The compare method returns positive if name is alphabetically greater than this.name,
 		 * or negative if name is before this.name, or 0 if they are equal.
